@@ -1,0 +1,23 @@
+name : Terraform Deployment
+on : push
+jobs:
+  deploy:
+    env:
+      aws-access-key-id: "${{ secrets.AWS_ACCESS_KEY_ID }}"
+      aws-secret-access-key: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+    runs-on: ununtu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+      - name: Set Up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+           terraform_version: 1.12.2
+      - name: Terraform Init,Plan
+        run:
+          terraform init
+          terraform plan
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+        
+    
