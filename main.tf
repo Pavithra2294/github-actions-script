@@ -30,7 +30,7 @@ resource "aws_s3_bucket" "code_bucket_paithra11" {
 resource "aws_s3_object" "script_file11" {
   bucket = aws_s3_bucket.code_bucket_paithra11.id
   key    = "script.py"           
-  source = "C:/Users/ashok/OneDrive/Desktop/terraform/script.py"  
+  source = "script.py"  
 }
 
 
