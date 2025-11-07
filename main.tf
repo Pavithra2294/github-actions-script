@@ -3,5 +3,5 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "example" {
-  bucket = "pavithra-terraform-demo-bucket1"
+  bucket = "pavithra-terraform-demo-bucket2"
 }
